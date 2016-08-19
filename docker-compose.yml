@@ -1,0 +1,5 @@
+humhub:
+        build: .
+        ports:
+                - "40080:80"
+        container_name: humhub
