@@ -1,7 +1,7 @@
 FROM tutum/lamp:latest
 RUN apt-get update && apt-get install -y curl  php5-curl php5-ldap php5-intl php5-gd php5-sqlite 
 RUN rm -fr /app && git clone https://github.com/humhub/humhub.git /app
-RUN cd /app && git checkout v1.1.0-beta.2 && cd -
+RUN cd /app && git checkout v1.1.0 && cd -
 RUN mkdir -p /root/.composer
 COPY config.json /root/.composer
 
