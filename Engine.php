@@ -30,6 +30,8 @@ class Engine extends OAuth2
 
     // public logoutUrl = '' todo
 
+    public $baseURLHH  = 'http://iron.engine.kdm.wcss.pl:40080';
+
     /**
      * @inheritdoc
      */
@@ -64,7 +66,7 @@ class Engine extends OAuth2
             'client_secret' => $this->clientSecret,
             'code' => $authCode,
             'grant_type' => 'authorization_code',
-            'redirect_uri' => $this->getReturnUrl(),
+            'redirect_uri' => $this->baseURLHH . '/user/auth/external?authclient=engine',
         ];
         $auth_header = array($this->getBasicAuthData());
         $response = $this->sendRequest('POST', $this->tokenUrl, array_merge($defaultParams, $params), $auth_header);
