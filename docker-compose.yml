@@ -3,3 +3,6 @@ humhub:
         ports:
                 - "40080:80"
         container_name: humhub
+        volumes:
+                - /srv/docker/humhub/mysql/etc:/etc/mysql:Z
+                - /srv/docker/humhub/mysql/db:/var/lib/mysql:Z
