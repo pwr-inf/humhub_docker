@@ -58,6 +58,11 @@ class Engine extends OAuth2
 
     }
 
+    public function defaultReturnUrl()
+    {
+       return $this->baseURLHH . '/user/auth/external?authclient=engine'; 
+    }
+
 
     public function fetchAccessToken($authCode, array $params = [])
     {
@@ -65,9 +70,10 @@ class Engine extends OAuth2
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret,
             'code' => $authCode,
+            'redirect_uri' => $this->defaultReturnUrl(),
             'grant_type' => 'authorization_code',
-            'redirect_uri' => $this->baseURLHH . '/user/auth/external?authclient=engine',
         ];
+        unset($params['redirect_uri']);
         $auth_header = array($this->getBasicAuthData());
         $response = $this->sendRequest('POST', $this->tokenUrl, array_merge($defaultParams, $params), $auth_header);
         $token = $this->createToken(['params' => $response]);
