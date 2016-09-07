@@ -18,6 +18,6 @@ RUN chown -R www-data:www-data /app
 RUN cd /app && chmod -R +w assets protected uploads 
 RUN cd /app && chmod +x protected/yii*
 
-
+VOLUME  ["/etc/mysql", "/var/lib/mysql" ]
 EXPOSE 80 3306
 CMD ["/run.sh"]
