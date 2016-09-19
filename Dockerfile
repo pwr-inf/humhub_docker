@@ -22,6 +22,7 @@ RUN cd /app && chmod -R +w assets protected uploads
 RUN cd /app && chmod +x protected/yii*
 
 RUN sed -i -e "s#mysql_install_db#mysql_install_db --user=mysql#g" /run.sh
+RUN sed -i -e "s#uroot#umysql#g"  /run.sh
 
 EXPOSE 80 3306
 CMD ["/start.sh"]
