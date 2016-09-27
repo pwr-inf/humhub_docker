@@ -6,8 +6,8 @@ humhub:
         volumes:
                 - /srv/docker/humhub/mysql/etc:/etc/mysql:Z
                 - /srv/docker/humhub/mysql/db:/var/lib/mysql:Z
-                - /srv/docker/humhub/app/humhub/uploads:/app/humhub/uploads:Z
-                - /srv/docker/humhub/app/humhub/assets:/app/humhub/assets:Z
+                - /srv/docker/humhub/app/uploads:/app/humhub/uploads:Z
+                - /srv/docker/humhub/app/assets:/app/humhub/assets:Z
                 - /srv/docker/humhub/app/humhub/protected/runtime:/app/humhub/protected/runtime:Z
                 - /srv/docker/humhub/app/humhub/protected/config:/app/humhub/protected/config:Z
                 - /srv/docker/humhub/app/humhub/protected/modules:/app/humhub/protected/modules:Z
