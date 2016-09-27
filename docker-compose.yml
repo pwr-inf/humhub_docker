@@ -8,6 +8,6 @@ humhub:
                 - /srv/docker/humhub/mysql/db:/var/lib/mysql:Z
                 - /srv/docker/humhub/app/uploads:/app/uploads:Z
                 - /srv/docker/humhub/app/assets:/app/assets:Z
-                - /srv/docker/humhub/app/protected/runtime:/app/protected/runtime:Z
-                - /srv/docker/humhub/app/protected/config:/app/protected/config:Z
-                - /srv/docker/humhub/app/protected/modules:/app/protected/modules:Z
+                - /srv/docker/humhub/app/protected/runtime:/app/humhub/protected/runtime:Z
+                - /srv/docker/humhub/app/protected/config:/app/humhub/protected/config:Z
+                - /srv/docker/humhub/app/protected/modules:/app/humhub/protected/modules:Z
